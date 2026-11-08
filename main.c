@@ -16,7 +16,7 @@ int main(void) {
     double historial[MAX_HISTORIAL];
     double energia;
 
-    //Mision mision;
+    mision mision;
 
     do {
         printf("\n=== Simulador Artemis: Situación N°3 ===\n");
