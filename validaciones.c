@@ -27,7 +27,7 @@ int leer_entero_rango(const char *mensaje, int minimo, int maximo, int *salida) 
 
         if (fin == linea || *fin != '\0' || errno == ERANGE ||
             valor < minimo || valor > maximo) {
-            printf("Entrada invalida. Ingresá un entero entre %d y %d.\n",
+            printf("Entrada invalida. Ingresa un entero entre %d y %d.\n",
                    minimo, maximo);
             continue;
         }
@@ -60,7 +60,7 @@ int leer_double_positivo(const char *mensaje, double *salida) {
 
         if (fin == linea || *fin != '\0' || errno == ERANGE ||
             !isfinite(valor) || valor <= 0.0) {
-            printf("Entrada invalida. Ingresá un numero mayor que cero.\n");
+            printf("Entrada invalida. Ingresa un numero mayor que cero.\n");
             continue;
         }
 

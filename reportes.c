@@ -7,7 +7,7 @@ void mostrar_resultados(const Mision *mision, const Resultado *resultado) {
         return;
     }
 
-    printf("\n--- Reporte de Misión TLI ---\n");
+    printf("\n--- Reporte de Mision TLI ---\n");
     printf("Masa de Orion: %.2f kg\n", mision->masa_kg);
     printf("Velocidad TLI: %.2f m/s\n", mision->velocidad_m_s);
     printf("Energia cinetica inicial: %.3e J\n", resultado->energia_cinetica_j);
@@ -23,7 +23,7 @@ void mostrar_resultados(const Mision *mision, const Resultado *resultado) {
                resultado->trabajo_externo_total_j);
     } else {
         printf("No haria falta trabajo externo adicional para llegar al punto\n");
-        printf("y quedar en reposo; el excedente a disipar seria %.3e J/kg.\n",
+        printf("y quedar en reposo, el excedente a disipar seria %.3e J/kg.\n",
                -resultado->trabajo_externo_j_kg);
     }
 
