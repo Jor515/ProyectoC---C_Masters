@@ -14,17 +14,17 @@ int main(void) {
     Resultado resultado;
 
     for (;;) {
-        printf("\n=== Simulador Artemis: Situación N°3 ===\n");
+        printf("\n=== Simulador Artemis: Situacion Numero: 3 ===\n");
         printf("1. Calcular con los datos de la consigna\n");
         printf("2. Ingresar otros valores\n");
-        printf("3. Ver explicacion de los incisos a y d\n");
+        printf("3. Ver explicacion de los incisos a) y d) \n");
         printf("4. Ver historial de energias\n");
         printf("0. Salir\n");
 
-        if ((!leer_entero_rango("Elegí una opción: ", 0, 4, &opcion))) {
-        printf("\nNo se pudo leer la opción. Cerrando el programa. \n");
+        if ((!leer_entero_rango("Elegi una opcion: ", 0, 4, &opcion))) {
+        printf("\nNo se pudo leer la opcion. Cerrando el programa. \n");
         return 1;
-
+        }
 
         if (opcion == 0) {
             break;
@@ -60,25 +60,23 @@ int main(void) {
         }
 
         if (calcular) {
-        if (!calcular_energia(&mision, &resultado)) {
+        if (!calcular_resultados(&mision, &resultado)) {
             printf("No se pudo calcular. Revisa los valores sean positivos. \n");
             continue;
             }   
-        }
+        
 
-        mostrar_resultados(&mision, &resultado);
+            mostrar_resultados(&mision, &resultado);
 
-        if (cantidad_historial < MAX_HISTORIAL) {
-            historial[cantidad_historial] = resultado;
-            cantidad_historial++;
-        } else {
-            printf("El historial está lleno. Este calculo no se guardó. \n");
-        }
-    }  
-
+            if (cantidad_historial < MAX_HISTORIAL) {
+                historial[cantidad_historial] = resultado;
+                cantidad_historial++;
+            } else {
+                printf("El historial está lleno. Este calculo no se pudo guardar. \n");
+            }
+        } 
+    } 
 
     printf("Simulador finalizada.\n");
     return 0;
 }
-
-
