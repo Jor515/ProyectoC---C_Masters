@@ -5,20 +5,15 @@
 #include "validaciones.h"
 #include "reportes.h"
 
-#define MAX_HISTORIAL 10
-
 int main(void) {
     int opcion;
     int calcular;
     size_t cantidad_historial = 0;
+    Resultado historial[MAX_HISTORIAL];
+    Mision mision;
+    Resultado resultado;
 
-
-    double historial[MAX_HISTORIAL];
-    double energia;
-
-    mision mision;
-
-    do {
+    for (;;) {
         printf("\n=== Simulador Artemis: Situación N°3 ===\n");
         printf("1. Calcular con los datos de la consigna\n");
         printf("2. Ingresar otros valores\n");
@@ -39,19 +34,21 @@ int main(void) {
 
         switch (opcion) {
             case 1:
-                mision.masa_kg = 26000.0;
-                mision.velocidad_m_s = 10900.0;
+                mision.masa_kg = MASA_ORION_CONSIGNA_KG;
+                mision.velocidad_m_s = VELOCIDAD_TLI_CONSIGNA_MS;
                 calcular = 1;
                 break;
 
             case 2:
-                if (!leer_double_positivo("Ingresá la masa de Orion en kg:", &mision.masa_kg)) {
-                printf("\nNo se pudo leer la masa. Cerrando el programa.\n");
-                return 1;
-            }
-
-            calcular = 1;
-            break;
+                if (!leer_double_positivo("Masa de Orion en kg: ",
+                                          &mision.masa_kg) ||
+                    !leer_double_positivo("Velocidad TLI en m/s: ",
+                                          &mision.velocidad_m_s)) {
+                    printf("No se pudieron leer los datos. Cerrando el programa.\n");
+                    return 1;
+                }
+                calcular = 1;
+                break;
 
             case 3:
                 mostrar_analisis();
@@ -59,29 +56,29 @@ int main(void) {
 
             case 4:
                 mostrar_historial(historial, cantidad_historial);
-                break;
+                continue;;
         }
 
         if (calcular) {
-        if (!calcular_energia(&mision, &energia)) {
+        if (!calcular_energia(&mision, &resultado)) {
             printf("No se pudo calcular. Revisa los valores sean positivos. \n");
             continue;
             }   
         }
 
-        mostrar_energia(energia);
+        mostrar_resultados(&mision, &resultado);
 
         if (cantidad_historial < MAX_HISTORIAL) {
-            historial[cantidad_historial] = energia;
+            historial[cantidad_historial] = resultado;
             cantidad_historial++;
         } else {
             printf("El historial está lleno. Este calculo no se guardó. \n");
         }
     }  
-} while (opcion != 0);
 
-printf("Simulador finalizada.\n");
-return 0;
+
+    printf("Simulador finalizada.\n");
+    return 0;
 }
 
 
