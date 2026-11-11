@@ -1,7 +1,6 @@
 #ifndef REPORTES_H
 #define REPORTES_H
 
-#include <stddef.h>
 #include "simulador.h"
 
 void mostrar_resultados(const Mision *mision, const Resultado *resultado);
