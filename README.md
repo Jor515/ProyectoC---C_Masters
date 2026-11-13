@@ -2,9 +2,9 @@
 
 ## Integrantes
 
+- Gariboglio, Matías Adriel
 - Ramirez, Lautaro Agustin
--
-- 
+- Torres Ocampo, Franco Joaquin
 - Varela, Juan Diego
 - Zapatero, Jorge Ezequiel
 
