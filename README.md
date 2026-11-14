@@ -12,8 +12,8 @@
 - ISI C
 
 ## Link del video demostrativo y del repositorio GitHub
-https://youtu.be/AL4GCINyYFc
-https://github.com/Jor515/ProyectoC---C_Masters
+- https://youtu.be/AL4GCINyYFc
+- https://github.com/Jor515/ProyectoC---C_Masters
 
 ## Descripcion
 
