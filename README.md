@@ -11,6 +11,10 @@
 ### Comision: 
 - ISI C
 
+## Link del video demostrativo y del repositorio GitHub
+https://youtu.be/AL4GCINyYFc
+https://github.com/Jor515/ProyectoC---C_Masters
+
 ## Descripcion
 
 Este programa de consola representa simplificada pero bien hecha, algunos calculos de la situacion 3 de la Situación 3: la inyeccion translunar (TLI) de la nave Orion y su movimiento luego del apagado de los motores .
