@@ -60,3 +60,16 @@ Consultas (prompts) realizadas durante el trabajo:
 - "Mi situacion es la situacion 3, me podes dar un planteo para tener una guia e interpretar la consigna."
 - "Como puedo organizar mejor cada archivo .c y .h?"
 - "Te pasé un `readme.txt` como puedo mejorar la redacción antes de subirlo a github."
+
+## Compilacion y ejecucion
+
+Se necesita un compilador de C con soporte para C11, por ejemplo GCC.
+En Windows con GCC, desde la carpeta del proyecto (en PowerShell o desde la consola del Visual Studio Code):
+
+~~~bash
+gcc -std=c11 -Wall -Wextra main.c simulador.c validaciones.c reportes.c -o artemis.exe -lm
+~~~
+
+~~~powershell
+.\artemis.exe
+~~~
